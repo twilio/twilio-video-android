@@ -10,43 +10,43 @@
     const path = window.location.pathname;
     const query = window.location.search || '';
     if (host == 'twilio.github.io' && path.startsWith('/twilio-video-android/docs')) {
-	const regex = /ktx|noisecancellation/
-	const parts = path.split('/').filter(Boolean);
-	if (regex.test(parts[2])) {
-	    const product = parts[2];
-	    const version = parts[3];
-	    const rest = parts.slice(4).join('/');
-	    if (product && product == 'ktx') {
-		if (version && version.toLowerCase() == 'latest') {
-		    destination = 'https://sdk.twilio.com/android/video-ktx/latest/docs/' +
-			(rest ? rest : '');
-		} else if (version) {
-		    destination = 'https://sdk.twilio.com/android/video-ktx/releases/' +
-			encodeURIComponent(version) + '/docs/' + (rest ? rest : '');
-		}
-	    } else if (product && product == 'noisecancellation') {
-		if (version && version.toLowerCase() == 'latest') {
-		    destination = 'https://sdk.twilio.com/android/video-noisecancellation/latest/docs/' +
-			(rest ? rest : '');
-		} else if (version) {
-		    destination = 'https://sdk.twilio.com/android/video-noisecancellation/releases/' +
-			encodeURIComponent(version) + '/docs/' + (rest ? rest : '');
-		}	    
-	    }	    
-	} else {
-	    const version = parts[2];
-	    const rest = parts.slice(3).join('/');
-	    if (version && version.toLowerCase() == 'latest') {
-		destination = 'https://sdk.twilio.com/android/video/latest/docs/' +
-		    (rest ? rest : '');
-	    } else if (version) {
-		destination = 'https://sdk.twilio.com/android/video/releases/' +
-		    encodeURIComponent(version) + '/docs/' + (rest ? rest : '');
-	    }	    
-	}
-	if (destination) {
-	    window.location.replace(destination + query)
-	}
+        const regex = /ktx|noisecancellation/
+        const parts = path.split('/').filter(Boolean);
+        if (regex.test(parts[2])) {
+            const product = parts[2];
+            const version = parts[3];
+            const rest = parts.slice(4).join('/');
+            if (product && product == 'ktx') {
+                if (version && version.toLowerCase() == 'latest') {
+                    destination = 'https://sdk.twilio.com/android/video-ktx/latest/docs/' +
+                        (rest ? rest : '');
+                } else if (version) {
+                    destination = 'https://sdk.twilio.com/android/video-ktx/releases/' +
+                        encodeURIComponent(version) + '/docs/' + (rest ? rest : '');
+                }
+            } else if (product && product == 'noisecancellation') {
+                if (version && version.toLowerCase() == 'latest') {
+                    destination = 'https://sdk.twilio.com/android/video-noisecancellation/latest/docs/' +
+                        (rest ? rest : '');
+                } else if (version) {
+                    destination = 'https://sdk.twilio.com/android/video-noisecancellation/releases/' +
+                        encodeURIComponent(version) + '/docs/' + (rest ? rest : '');
+                }           
+            }       
+        } else {
+            const version = parts[2];
+            const rest = parts.slice(3).join('/');
+            if (version && version.toLowerCase() == 'latest') {
+                destination = 'https://sdk.twilio.com/android/video/latest/docs/' +
+                    (rest ? rest : '');
+            } else if (version) {
+                destination = 'https://sdk.twilio.com/android/video/releases/' +
+                    encodeURIComponent(version) + '/docs/' + (rest ? rest : '');
+            }       
+        }
+        if (destination) {
+            window.location.replace(destination + query)
+        }
     }
   </script>
 </head>
